@@ -1,0 +1,25 @@
+
+<%- include("partials/header.ejs") %>
+
+    <h1> 👾 ToDo List Application 👾</h1>
+    <fieldset>
+    <legend><h2> <%= kindofday %> </h2> 
+    </legend>
+    
+
+    <form action="/" method="post">
+        <input type="text" name="newitem" placeholder="Add a new task" required autocomplete="off" >
+        <button class="add" type="submit">Add Task</button>
+    </form>
+  
+    <ul class="list-group my-5">
+        <% for(let i=0;i<newlistitem.length;i++) { %>
+        <li class="list-group-item"><span><%= newlistitem[i] %></span></label></li>
+        <% } %>
+    </ul>
+    <form action="/submit" method="POST">
+        <input type="submit" value="Refresh">
+      </form>
+
+</fieldset>
+<%- include("partials/footer.ejs") %>
